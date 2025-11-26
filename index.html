@@ -3,45 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DtAIV - Discarding Time Awakening Inner Vision</title>
+    <meta name="description" content="DAIV: A Time-Warp Invariant Measurement Device for Organizational Semantics. 物理時間を無効化し、意味の順序を復元する次世代システム。">
+    <title>DAIV - Discharging Time Awakening Inner Vision</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         body {
             font-family: 'Noto Sans JP', sans-serif;
-            background-color: #0f172a; /* Deep Dark Blue */
+            background-color: #0B0F19; /* Void Black */
             color: #f8fafc;
+            overflow-x: hidden;
         }
         .english-font {
             font-family: 'Montserrat', sans-serif;
         }
         .hero-bg {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background: radial-gradient(circle at 50% 50%, #1a2035 0%, #0B0F19 100%);
+        }
+        /* Aitchison Geometry的なグリッド背景 */
+        .math-grid {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
         }
         .gradient-text {
-            background: linear-gradient(to right, #60a5fa, #34d399);
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #34d399 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradientMove 5s ease infinite;
+        }
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased selection:bg-blue-500 selection:text-white">
 
-    <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-sm border-b border-slate-800">
+    <nav class="fixed w-full z-50 glass-panel border-b-0 border-b-slate-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center">
-                    <span class="english-font text-2xl font-bold tracking-wider text-white">DAIV</span>
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 border-2 border-blue-400 rounded-full flex items-center justify-center">
+                        <div class="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                    </div>
+                    <span class="english-font text-2xl font-bold tracking-widest text-white">DAIV</span>
                 </div>
                 <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#about" class="hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition">About</a>
-                        <a href="#feed" class="hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition">FEED Theory</a>
-                        <a href="#open-strategy" class="hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition">Open Strategy</a>
-                        <a href="http://163.44.98.213/gamma/" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-medium transition">
-                            <i class="fas fa-sign-in-alt mr-2"></i>System Login
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#philosophy" class="english-font hover:text-blue-400 text-sm font-medium transition duration-300">Philosophy</a>
+                        <a href="#feed" class="english-font hover:text-blue-400 text-sm font-medium transition duration-300">FEED Theory</a>
+                        <a href="#proof" class="english-font hover:text-blue-400 text-sm font-medium transition duration-300">Proof & Data</a>
+                        <a href="http://163.44.98.213/gamma/" target="_blank" class="bg-slate-800 hover:bg-blue-600 border border-slate-700 text-white px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 group">
+                            <i class="fas fa-terminal mr-2 text-xs text-blue-400 group-hover:text-white"></i>System Login
                         </a>
                     </div>
                 </div>
@@ -49,87 +72,187 @@
         </div>
     </nav>
 
-    <section class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl"></div>
+    <section class="hero-bg math-grid min-h-screen flex items-center justify-center relative">
+        <div class="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[100px] animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[80px]"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <h2 class="english-font text-blue-400 font-medium tracking-[0.2em] mb-4 uppercase text-sm md:text-base animate-pulse">
-                Project DtAIV
-            </h2>
-            <h1 class="english-font text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                Discarding Time<br>
+            <div class="inline-block mb-6 px-4 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 backdrop-blur-sm">
+                <span class="text-blue-400 text-xs font-bold tracking-widest uppercase">Time-Warp Invariant Measurement Device</span>
+            </div>
+            
+            <h1 class="english-font text-5xl md:text-8xl font-bold mb-8 leading-none tracking-tight">
+                Discharging <span class="text-slate-500 line-through decoration-red-500/50 decoration-2">Time</span><br>
                 <span class="gradient-text">Awakening Inner Vision</span>
             </h1>
-            <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light">
-                定性的な意識データを定量化し、人間の潜在能力を覚醒させる。<br>
-                次世代の意識拡張システム。
+            
+            <p class="text-slate-400 text-lg md:text-xl max-w-3xl mx-auto mb-12 font-light leading-relaxed">
+                物理的な「時間」を捨て、意味の「順序」を取り戻す。<br>
+                プラトン、ボーム、そして量子脳理論を統合し、<br>
+                <span class="text-white font-medium">「意識の幾何学」</span>を実装した次世代解析システム。
             </p>
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="#about" class="border border-slate-600 hover:border-white text-white px-8 py-3 rounded-full transition duration-300">
-                    Learn More
+
+            <div class="flex flex-col md:flex-row justify-center gap-5">
+                <a href="#feed" class="glass-panel hover:bg-white/5 text-white px-8 py-4 rounded-full transition duration-300 border border-slate-600">
+                    Explore Theory
                 </a>
-                <a href="http://163.44.98.213/gamma/" target="_blank" class="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white px-8 py-3 rounded-full shadow-lg shadow-blue-500/30 transition duration-300">
-                    Launch γ-Version
+                <a href="https://zenodo.org/" target="_blank" class="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white px-8 py-4 rounded-full shadow-lg shadow-emerald-900/50 transition duration-300 flex items-center justify-center gap-3">
+                    <span>Read Paper (Zenodo)</span>
+                    <i class="fas fa-external-link-alt text-xs"></i>
                 </a>
             </div>
-            <p class="mt-8 text-xs text-slate-500 uppercase tracking-widest">
-                Patent Pending: 特願2025-186796
-            </p>
+
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto border-t border-slate-800 pt-8">
+                <div class="text-center">
+                    <div class="text-xs text-slate-500 uppercase tracking-widest mb-1">Patent Status</div>
+                    <div class="text-white font-mono">Pending (特願2025-186796)</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-xs text-slate-500 uppercase tracking-widest mb-1">Paper</div>
+                    <div class="text-emerald-400 font-bold"><i class="fas fa-check-circle mr-1"></i>Published (Zenodo)</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-xs text-slate-500 uppercase tracking-widest mb-1">System</div>
+                    <div class="text-blue-400 font-bold">FEED γ-Version</div>
+                </div>
+                 <div class="text-center">
+                    <div class="text-xs text-slate-500 uppercase tracking-widest mb-1">Environment</div>
+                    <div class="text-purple-400 font-bold">ConoHa VPS / MariaDB</div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="about" class="py-20 bg-slate-900">
+    <section id="philosophy" class="py-24 bg-[#0B0F19] relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="english-font text-3xl font-bold mb-4">What is DAIV?</h2>
-                <div class="w-16 h-1 bg-blue-500 mx-auto"></div>
-            </div>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-                    <h3 class="text-2xl font-bold text-white">潜在意識の「可視化」と「解放」</h3>
-                    <p class="text-slate-400 leading-relaxed">
-                        DAIV（Discarding Time Awakening Inner Vision）は、人間の内面に眠る潜在的なビジョンを可視化データ化させるための理論体系およびシステムです。
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <h2 class="english-font text-4xl font-bold text-white">
+                        From <span class="text-slate-600">Clock Time</span><br>
+                        to <span class="text-blue-400">Semantic Order</span>
+                    </h2>
+                    <p class="text-slate-400 leading-relaxed text-lg">
+                        私たちは、「時計時間」という幻想のフィルターを通して世界を見ています。DAIVは、このフィルターを除去（Discharge）し、その奥にある「実相（Inner Vision）」に直接アクセスします。
                     </p>
-                    <p class="text-slate-400 leading-relaxed">
-                        日々の活動データ、感覚、感情といった「定性情報」を独自のアルゴリズムで解析し、それを数値化（定量化）することで、これまで見えなかった自身の可能性を客観的に把握することを可能にします。
-                    </p>
-                </div>
-                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-microchip text-blue-400 text-2xl mr-3"></i>
-                        <span class="font-bold">Core Technology</span>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 rounded-lg bg-slate-900/50 border border-slate-800">
+                            <i class="fas fa-cube text-blue-500 mt-1"></i>
+                            <div>
+                                <h4 class="text-white font-bold">プラトン的イデアの実装</h4>
+                                <p class="text-slate-500 text-sm">現象の背後にある「普遍的な型（ベクトル）」を定量化。</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 rounded-lg bg-slate-900/50 border border-slate-800">
+                            <i class="fas fa-wave-square text-purple-500 mt-1"></i>
+                            <div>
+                                <h4 class="text-white font-bold">ボームの暗在系へのアクセス</h4>
+                                <p class="text-slate-500 text-sm">畳み込まれた情報の海から、意味の順序を抽出。</p>
+                            </div>
+                        </div>
                     </div>
-                    <ul class="space-y-4 text-slate-300">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
-                            <span>定性データの定量化アルゴリズム</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
-                            <span>AIによる行動予測と最適化提案</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
-                            <span>FEED理論に基づくUXデザイン</span>
-                        </li>
-                    </ul>
+                </div>
+                <div class="relative">
+                    <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 p-8 flex items-center justify-center relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+                        <div class="text-center z-10">
+                            <div class="text-6xl mb-4 group-hover:scale-110 transition duration-500">t₂</div>
+                            <div class="text-sm text-slate-400 tracking-widest uppercase">Time is Tag Order</div>
+                            <div class="mt-8 text-xs font-mono text-emerald-500">
+                                ∫ || d/dτ clr(p(τ)) ||² dτ
+                            </div>
+                        </div>
+                        <div class="absolute w-full h-full border border-blue-500/20 rounded-full animate-[spin_10s_linear_infinite]"></div>
+                        <div class="absolute w-3/4 h-3/4 border border-purple-500/20 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="feed" class="py-20 bg-slate-950 relative">
+    <section id="feed" class="py-24 bg-slate-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="english-font text-3xl font-bold mb-4">FEED Theory</h2>
-                <p class="text-slate-400">Feeling-Enhanced Experience Design</p>
+            <div class="text-center mb-20">
+                <span class="text-blue-500 font-bold tracking-widest text-sm uppercase">Core Technology</span>
+                <h2 class="english-font text-4xl font-bold mt-2 mb-6">FEED Theory</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">
+                    Aitchison幾何学を用いた、時間伸縮不変な測定デバイス。<br>
+                    「観測者のタグ」がいかに現実を歪めるかを数学的に補正します。
+                </p>
             </div>
+
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-blue-500/50 transition duration-300">
-                    <div class="w-12 h-12 bg-blue-900/30 rounded-lg flex items-center justify-center mb-4 text-blue-400">
-                        <i class="fas fa-heartbeat text-xl"></i>
+                <div class="glass-panel p-8 rounded-2xl hover:border-blue-500/50 transition duration-500 group">
+                    <div class="w-14 h-14 bg-blue-900/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-900/40 transition">
+                        <span class="english-font text-2xl font-bold text-blue-400">F</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Feeling</h3>
-                    <p class="text-slate-400 text-sm">
-                        感覚や感情を起点としたデータ収集。論理だけでは捉えきれない人間の微細な変化を
+                    <h3 class="text-xl font-bold mb-3 text-white">Feeling Vectors</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        定性的な感覚データを「シンプレックス空間内の確率ベクトル」として定義。曖昧な主観を、厳密な数学的対象（$p_z$）へと変換します。
+                    </p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-2xl hover:border-purple-500/50 transition duration-500 group">
+                    <div class="w-14 h-14 bg-purple-900/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-900/40 transition">
+                        <span class="english-font text-2xl font-bold text-purple-400">E</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Enhanced Geometry</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        物理時間を無効化する「弧長パラメータ化」を実装。時間経過に依存せず、純粋な「意味の移動距離」だけを計測します。
+                    </p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-2xl hover:border-emerald-500/50 transition duration-500 group">
+                    <div class="w-14 h-14 bg-emerald-900/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-emerald-900/40 transition">
+                        <span class="english-font text-2xl font-bold text-emerald-400">E</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Experience Design</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        「SSOT（信頼できる唯一の情報源）」に基づき、観測者バイアスのない客観的な自己認識と、未来への最適な軌跡を提案します。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proof" class="py-24 bg-[#0B0F19] relative overflow-hidden">
+        <div class="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-slate-900 to-transparent"></div>
+
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <h2 class="english-font text-3xl font-bold mb-4">Open Strategy & Proof</h2>
+                    <p class="text-slate-400 max-w-xl">
+                        DAIVプロジェクトは、全てのプロセスを公開・実証しています。<br>
+                        着想から4ヶ月で到達した「実験結果」がここにあります。
+                    </p>
+                </div>
+                <div class="mt-6 md:mt-0">
+                    <a href="https://github.com/daiv-project" class="text-white border-b border-blue-500 pb-1 hover:text-blue-400 transition">
+                        View Source Code <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <a href="https://zenodo.org/" target="_blank" class="block bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-2xl border border-slate-700 hover:border-emerald-500/50 transition duration-300 group">
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="fas fa-file-alt text-3xl text-emerald-500"></i>
+                        <span class="bg-emerald-500/20 text-emerald-400 text-xs px-3 py-1 rounded-full font-bold">PUBLISHED</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition">Research Paper (Zenodo)</h3>
+                    <p class="text-slate-400 text-sm mb-4">
+                        "FEED: A Time-Warp Invariant Measurement Device for Organizational Semantics"<br>
+                        TestA（観測者交換）とTestB（スケール連結）の結果を含む完全な論文。
+                    </p>
+                    <div class="text-xs font-mono text-slate-500">DOI: 10.5281/zenodo.xxxxxxx</div>
+                </a>
+
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-2xl border border-slate-700">
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="fas fa-certificate text-3xl text-blue-500"></i>
+                        <span class="bg-blue-500/20 text-blue-400 text-xs px-3 py-1 rounded-full font-bold">PENDING</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Patent Application</h3>
+                    <p class="text-slate-400 text-sm mb-4">
+                        特願2025-186796<br>
+                        「時間ではなく順序のみに依存する評価システム」として、FEED理論の中核技術を知財化。弁理士連携
