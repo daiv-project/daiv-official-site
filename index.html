@@ -1,1 +1,135 @@
-<h1>Welcome to DAIV Official Site</h1>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAIV - Discharging Time Awakening Inner Vision</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #0f172a; /* Deep Dark Blue */
+            color: #f8fafc;
+        }
+        .english-font {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #60a5fa, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-sm border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="english-font text-2xl font-bold tracking-wider text-white">DAIV</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#about" class="hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition">About</a>
+                        <a href="#feed" class="hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition">FEED Theory</a>
+                        <a href="#open-strategy" class="hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition">Open Strategy</a>
+                        <a href="http://163.44.98.213/gamma/" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-medium transition">
+                            <i class="fas fa-sign-in-alt mr-2"></i>System Login
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="english-font text-blue-400 font-medium tracking-[0.2em] mb-4 uppercase text-sm md:text-base animate-pulse">
+                Project DAIV
+            </h2>
+            <h1 class="english-font text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Discharging Time<br>
+                <span class="gradient-text">Awakening Inner Vision</span>
+            </h1>
+            <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light">
+                定性的な意識データを定量化し、人間の潜在能力を覚醒させる。<br>
+                次世代の意識拡張システム。
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#about" class="border border-slate-600 hover:border-white text-white px-8 py-3 rounded-full transition duration-300">
+                    Learn More
+                </a>
+                <a href="http://163.44.98.213/gamma/" target="_blank" class="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white px-8 py-3 rounded-full shadow-lg shadow-blue-500/30 transition duration-300">
+                    Launch γ-Version
+                </a>
+            </div>
+            <p class="mt-8 text-xs text-slate-500 uppercase tracking-widest">
+                Patent Pending: 特願2025-186796
+            </p>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="english-font text-3xl font-bold mb-4">What is DAIV?</h2>
+                <div class="w-16 h-1 bg-blue-500 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-white">潜在意識の「可視化」と「解放」</h3>
+                    <p class="text-slate-400 leading-relaxed">
+                        DAIV（Discharging Time Awakening Inner Vision）は、人間の内面に眠る潜在的なビジョンを覚醒させるための理論体系およびシステムです。
+                    </p>
+                    <p class="text-slate-400 leading-relaxed">
+                        日々の活動データ、感覚、感情といった「定性情報」を独自のアルゴリズムで解析し、それを数値化（定量化）することで、これまで見えなかった自身のバイオリズムや可能性を客観的に把握することを可能にします。
+                    </p>
+                </div>
+                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-microchip text-blue-400 text-2xl mr-3"></i>
+                        <span class="font-bold">Core Technology</span>
+                    </div>
+                    <ul class="space-y-4 text-slate-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span>定性データの定量化アルゴリズム</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span>AIによる行動予測と最適化提案</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+                            <span>FEED理論に基づくUXデザイン</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="feed" class="py-20 bg-slate-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="english-font text-3xl font-bold mb-4">FEED Theory</h2>
+                <p class="text-slate-400">Feeling-Enhanced Experience Design</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-blue-500/50 transition duration-300">
+                    <div class="w-12 h-12 bg-blue-900/30 rounded-lg flex items-center justify-center mb-4 text-blue-400">
+                        <i class="fas fa-heartbeat text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Feeling</h3>
+                    <p class="text-slate-400 text-sm">
+                        感覚や感情を起点としたデータ収集。論理だけでは捉えきれない人間の微細な変化を
